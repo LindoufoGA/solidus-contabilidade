@@ -78,6 +78,28 @@ html {
   align-items: end;
   margin-bottom: 120px;
 }
+.home img {
+  display: none;
+}
+.img-bg {
+  position: relative;
+}
+.img-bg::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(34, 40, 39, 0.1), #2e2d2c88),
+    url("img/Sócios.png");
+  position: absolute;
+  display: block;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  background-position-y: bottom;
+  box-shadow: 0px 10px 10px;
+}
 .home-introducao h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -92,12 +114,13 @@ html {
   display: block;
   margin-bottom: 1rem;
 }
+.btn-home,
 .btn {
   background-color: #bea771;
   color: #282c33;
   border-radius: 8px;
   border: none;
-  padding: 18px 36px;
+  padding: 14px 28px;
   font-size: 1rem;
   font-weight: bold;
   margin-right: 12px;
@@ -106,21 +129,18 @@ html {
   transition: 0.2s;
   box-shadow: 1px 2px 1px;
 }
+.btn-home:hover,
 .btn:hover {
   background-color: #e7d09b;
   scale: 1.1;
 }
-
+.btn-home a,
 .btn a {
   color: #ffffff;
 }
-.home img {
-  border-radius: 10px;
-  height: 100%;
-  object-fit: cover;
-  box-shadow: 10px 20px 30px;
+.btn-home {
+  background-color: #282c33;
 }
-
 .titulo {
   text-align: center;
   font-size: 2.5rem;
@@ -364,7 +384,7 @@ html {
 .form textarea {
   resize: none;
   background-color: #ececec;
-  width: 350px;
+  width: 100%;
   height: 100px;
   padding: 10px;
 }
@@ -461,8 +481,19 @@ footer p {
 .menu-hamburguer span:nth-child(2) {
   margin: 4px 0;
 }
+@media (max-width: 1024px) {
+  .img-bg::before {
+    background-position-x: right;
+  }
+  .home-introducao p {
+    font-size: 2rem;
+  }
+  .btn-home a {
+    font-size: 0.85rem;
+  }
+}
 
-@media (max-width: 850px) {
+@media (max-width: 800px) {
   .nav {
     padding: 24px;
     margin-left: 80px;
@@ -473,8 +504,10 @@ footer p {
     margin-bottom: 60px;
     text-align: center;
   }
-  .img-bg {
-    display: none;
+  .btn-home {
+    font-size: 0.85rem;
+    padding: 14px;
+    margin-left: 15px;
   }
   .servicos-lista,
   .beneficios {
@@ -518,6 +551,21 @@ footer p {
   .redes-links {
     justify-content: center;
   }
+  .img-bg::before {
+    display: none;
+  }
+  .home img {
+    display: block;
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 1px 2px 30px;
+    margin-top: 2rem;
+  }
+  .sobre-conteudo,
+  .home-introducao {
+    text-align: start;
+  }
 }
 
 .nav.ativo {
@@ -525,7 +573,11 @@ footer p {
 }
 
 @media (max-width: 720px) {
-  .nav {
+  .sobre-conteudo,
+  .home-introducao {
+    text-align: start;
+  }
+  .nav.ativo {
     display: none;
   }
   .menu-hamburguer {
@@ -540,6 +592,10 @@ footer p {
   }
   .home-introducao p {
     font-size: 1.75rem;
+  }
+  .btn-home {
+    margin-bottom: 1rem;
+    align-items: center;
   }
   .btn {
     margin-bottom: 1.2rem;
@@ -587,7 +643,10 @@ footer p {
     margin-left: 60px;
   }
 }
-
+.btn-home {
+  padding: 14px;
+  margin-left: 0;
+}
 .js-content {
   opacity: 0;
   transform: translate3d(0, -30px, 0);
@@ -600,10 +659,12 @@ footer p {
 }
 
 .termos {
-  grid-area: 2/3;
-  font-size: 0.75rem;
-  padding: 10px;
-  font-weight: normal;
   background-color: #282c33;
+  font-size: 0.75rem;
   margin: 0;
+  width: 90%;
+  padding: 4px;
+}
+.termos a {
+  color: #f7f7f7;
 }
