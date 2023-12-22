@@ -301,18 +301,18 @@
       <div class="img-footer">
         <img src="img/solidus-mastro.jpg" alt="bandeira solidus">
       </div>
-      <form class="form">
+      <form action="./enviar.php" method="post" class="form">
         <div>
           <label for="nome">Nome</label>
-          <input type="text" name="nome" id="nome" placeholder="Nome" required>
+          <input type="text" name="nome" id="nome" placeholder="Nome" autocomplete="username" required>
         </div>
         <div>
           <label for="telefone">Telefone</label>
-          <input type="text" name="telefone" id="telefone" placeholder="Telefone" required>
+          <input type="text" name="telefone" id="telefone" placeholder="Telefone" autocomplete="tel" required>
         </div>
         <div>
           <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" placeholder="E-mail" required>
+          <input type="email" name="email" id="email" placeholder="E-mail" autocomplete="email" required>
         </div>
         <div>
           <label for="mensagem">Mensagem</label>
@@ -363,6 +363,7 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script src="formulario.js"></script>
 </body>
 
 </html>
